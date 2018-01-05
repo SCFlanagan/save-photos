@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
     renderContent() {
@@ -9,13 +10,13 @@ class Navbar extends Component {
             case false:
                 return (
                     <li>
-                        <a href="/auth/google">Log In With Google</a>
+                        <a href='/auth/google'>Log In With Google</a>
                     </li>
                 );
             default:
                 return (
                     <li>
-                        <a href="/api/logout">Log Out</a>
+                        <a href='/api/logout'>Log Out</a>
                     </li>
                 );
         }
@@ -24,9 +25,13 @@ class Navbar extends Component {
     render() {
         return (
             <nav>
-                <div className="nav-wrapper">
-                    <a href="/" className="left brand-logo">Logo</a>
-                    <ul className="right">
+                <div className='nav-wrapper'>
+                    <Link 
+                        to={this.props.auth ? '/home' : '/'} 
+                        className='left brand-logo'>
+                        Surveyr
+                    </Link>
+                    <ul className='right'>
                         {this.renderContent()}
                     </ul>
                 </div>

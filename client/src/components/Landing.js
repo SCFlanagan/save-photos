@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Landing = () => {
     return (
         <div style={{ textAlign: 'center' }}>
-            <h1> Landing Page</h1>
+            <h1> Surveyr</h1>
+            Collect Feedback From Your Users
         </div>
     )
 }
